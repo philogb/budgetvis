@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>US Budget spending</title>
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text&subset=latin' rel='stylesheet' type='text/css'>
+<link type="text/css" href="style.css" rel="stylesheet" />
+
+<script language="javascript" type="text/javascript" src="Jit/jit.yc.js"></script>
+<script language="javascript" type="text/javascript" src="lib.yc.js"></script>
+<script language="javascript" type="text/javascript" src="index.yc.js"></script>
+</head>
+
+<body onload="init();">
+  
+   
+  <div id="container">
+  <header>
+    <h1>
+      US Budget spending 
+    </h1>
+    </header>
+    <div class="description">
+      <a href="http://blog.thejit.org/2011/03/27/our-entry-for-the-google-dataviz-challenge/">What is this?</a>
+    </div>
+
+    <nav>
+    <span id="bc">Total Budget</span> - Year: <span id="yearbc"></span>
+    <div class="controls-top">
+      <input type="checkbox" id="heat" checked="checked" /> <label for="heat">Highlight yr/yr change</label>
+      <div id="wrap-legend">
+         <span id="yr2yr"></span> <div class="legend-item"><div class="legend increase"></div> Increase</div> | <div class="legend-item"><div class="legend decrease"></div> Decrease</div>
+      </div>
+    </div>
+    </nav>
+    
+    <div id="icicle">
+      <div id="loading">Loading information, please wait...</div>
+      <div id="back-bar" class="level0" title="Right click on the visualization also takes you to the parent node.">
+        <div class="back-arrow"></div>
+      </div>
+    </div>
+
+    <nav class="bottom">
+    <span id="bcb">Total Budget</span> in 
+     <select id="trend-type">
+        <option>USD</option>
+        <option>USD per capita</option>
+        <option>&#8240; of GDP</option>
+      </select> 
+      - Year: <span id="yearbcb"></span>.
+
+      <div class="controls">
+
+      <div class="legend-item">  
+        <input type="checkbox" id="debt" /> 
+        <div class="legend debt"></div>
+        <label class="dynamic" for="debt"> Debt in <span id="debt-change">USD</span></label> | 
+      </div>
+
+      <div class="legend-item">
+        <input type="checkbox" id="gdp" /> 
+        <div class="legend gdp"></div>
+        <label class="dynamic" for="gdp"> GDP in <span id="gdp-change">USD</span></label> | 
+      </div>
+      
+      <div class="legend-item">
+        <input type="checkbox" id="inflation" /> 
+        <div class="legend inflation"></div>
+        <label for="inflation">
+          Inflation in %</label> | 
+      </div>
+
+      <div class="legend-item">
+        <input type="checkbox" id="population" /> 
+        <div class="legend population"></div>
+        <label for="population"> 
+          Population Change in %</label>
+      </div>
+    </div>
+
+    </nav>
+    <div id="histogram"></div>
+    <div id="area" class="line"></div>
+    <div id="area2" class="line"></div>
+    <div id="area3" class="line"></div>
+    <div id="area4" class="line"></div>
+  </div>  
+  <footer>
+  Authors <a href="http://philogb.github.com/">Nicolas Garcia Belmonte</a> and <a href="http://uxnerd.com/">Maria Luz Caballero</a>
+  </footer>
+
+  <div id="loading-panel" style="display:none;">Loading data, please wait...</div>
+</body>
+</html>
+
